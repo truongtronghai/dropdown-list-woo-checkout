@@ -28,21 +28,21 @@ if(!in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', ge
     exit;
 }
 
-include(plugin_dir_path(__FILE__)."\\includes\\add-states-to-vn.php");   
+include(plugin_dir_path(__FILE__)."/includes/add-states-to-vn.php");   
 
-include(plugin_dir_path(__FILE__)."\\includes\\add-cities-to-vn.php"); 
+include(plugin_dir_path(__FILE__)."/includes/add-cities-to-vn.php"); 
 
-include(plugin_dir_path(__FILE__)."\\includes\\state-field-required-vn.php");    
+include(plugin_dir_path(__FILE__)."/includes/state-field-required-vn.php");    
 
-include(plugin_dir_path(__FILE__)."\\includes\\reorder-field-checkout.php");
+include(plugin_dir_path(__FILE__)."/includes/reorder-field-checkout.php");
 
-include(plugin_dir_path(__FILE__)."\\includes\\calc-shipping-form-cart-page.php");
+include(plugin_dir_path(__FILE__)."/includes/calc-shipping-form-cart-page.php");
 
 /** Add JS script to footer */
 add_action('wp_footer','dlpwc_add_script_to_footer');
 function dlpwc_add_script_to_footer(){
     
-    wp_enqueue_script( 'load-cities-ajax', plugin_dir_url(__FILE__)."//includes//js//load-cities.js"); // handle will be used in localize
+    wp_enqueue_script( 'load-cities-ajax', plugin_dir_url(__FILE__)."/includes/js/load-cities.js"); // handle will be used in localize
     // in JavaScript, object properties are accessed as ajax_object.ajax_url, ajax_object.text_select_one
     wp_localize_script( 'load-cities-ajax', 'ajax_object',array( 
         'ajax_url' => plugin_dir_url(__FILE__)."includes/get-cities-on-province.php",
@@ -50,7 +50,7 @@ function dlpwc_add_script_to_footer(){
         ) );
     
     /** Change Calculating shipping form in Cart page */
-    wp_enqueue_script( 'load-cities-ajax-calc-shipping', plugin_dir_url(__FILE__)."//includes//js//load-cities-calc-shipping.js"); // handle will be used in localize
+    wp_enqueue_script( 'load-cities-ajax-calc-shipping', plugin_dir_url(__FILE__)."/includes/js/load-cities-calc-shipping.js"); // handle will be used in localize
     // in JavaScript, object properties are accessed as ajax_object.ajax_url, ajax_object.text_select_one
     wp_localize_script( 'load-cities-ajax-calc-shipping', 'ajax_object_calc_shipping',array( 
         'calc_shipping_ajax_url' => plugin_dir_url(__FILE__)."includes/get-cities-on-province.php"

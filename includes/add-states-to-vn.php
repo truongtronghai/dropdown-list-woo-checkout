@@ -8,7 +8,7 @@ function dlpwc_add_states( $states ) {
     // $states['VN'] = array(
     //     'sample' => 'sample text'
     // );
-    $json_string = file_get_contents(plugin_dir_path(__FILE__)."countries\\VN\\states.json"); // read whole file to string
+    $json_string = file_get_contents(plugin_dir_path(__FILE__)."countries/VN/states.json"); // read whole file to string
     
     $states['VN'] = json_decode($json_string,true);
     
