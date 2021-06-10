@@ -7,7 +7,7 @@ $result_cities = array();
 // $data = $_POST['province'];
 // echo "result: ".$data;
 if(isset($_POST["province"])){
-    $json_string = file_get_contents("countries\\VN\\cities.json"); // read whole file to string
+    $json_string = file_get_contents("countries/VN/cities.json"); // read whole file to string
     $cities = json_decode($json_string,true);
     foreach($cities as $val){
         if(current($val) == $_POST["province"]){
