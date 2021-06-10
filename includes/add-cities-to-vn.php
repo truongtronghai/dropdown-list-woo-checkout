@@ -9,7 +9,7 @@ function override_checkout_city_fields( $fields ) {
     );
 
     $fields['city']['type'] = 'select';
-    $fields['city']['label'] = 'Province';
+    $fields['city']['label'] = __('Town / District','woocommerce');
     $fields['city']['required'] = true;
     $fields['city']['options'] = $option_cities;
 
