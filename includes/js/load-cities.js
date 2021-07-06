@@ -1,7 +1,6 @@
 jQuery(document).ready(function($){
     
-    //$("#billing_city").attr("data-placeholder",ajax_object.text_select_one); // initializing
-    //$("#shipping_city").attr("data-placeholder",ajax_object.text_select_one); // initializing
+    $("#billing_state").val("").change(); // reset to empty value, so that user needs to make a changing event in billing_state dropdown list element 
 
     $("#billing_state").change(function(){
         let province = {"province" : $(this).val()};
